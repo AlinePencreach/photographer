@@ -1,6 +1,12 @@
-<?php
-// Dépendances composer.
-require_once __DIR__ . '/vendor/autoload.php';
+<?php function load_styles() {
 
-// Initialisation de Timber.
-new Timber\Timber();
+    wp_enqueue_style(
+        'main',
+        get_template_directory_uri() . '/css/style.css'
+    );
+
+}
+
+
+
+add_action('wp_enqueue_scripts', 'load_styles');
