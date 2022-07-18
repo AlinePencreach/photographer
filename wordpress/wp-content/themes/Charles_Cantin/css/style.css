@@ -5,25 +5,57 @@ font-family: 'Pridi', serif;
 font-family: 'Arapey', serif;
 */
 
-* {
+body {
   padding: 0;
   margin: 0;
   text-decoration: none;
   list-style: none;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  background-color: #404A53; 
+  color: #E0DBDB;
 }
 
 a {
   text-decoration: none;
 }
 
-a:hover {
-  color: white;
+
+.navbar-brand {
+  color: #D3E4EC; 
+  font-family: 'Poiret One', cursive;
+}
+
+.navbar-nav{
+  color: #D3E4EC; 
+  font-family: 'Arapey', serif;
+  font-size: 20px;
+}
+
+.navbar-brand:hover{
+  color: #D3E4EC; 
   text-decoration: none;
 }
 
+.nav-link {
+  text-decoration: none;
+  color: #D3E4EC; 
+}
+
+.nav-link:hover{
+  text-decoration: none;
+  color: #D3E4EC; 
+}
+
 /* Nouvelles règles si la fenêtre fait au plus 1024px de large */
+@media screen and (min-width: 992px){
+  .position-lg-absolute{
+    position: absolute !important;
+    right: 0;
+  }
+
+}
+
 @media screen and (min-width: 992px)
 {
     .header-img {
@@ -34,26 +66,12 @@ a:hover {
 }
 
 
-
-
-
-
-.admin-bar .navbar{
-  top: 32px;
-}
-
 .logo {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
-#charles-cantin {
-    color: #D3E4EC; 
-    font-family: 'Poiret One', cursive;
-}
-
 .content {
   display: flex;
   flex-direction: column;
