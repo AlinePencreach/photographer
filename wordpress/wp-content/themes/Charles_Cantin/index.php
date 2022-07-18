@@ -1,5 +1,5 @@
-<?php include 'templates/navbar.php'; ?>
+<?php get_header() ?>
 
-<h1>Hello world,  <?php the_title()?> </h1>
+<h1>Hello world </h1>
 
-<?php include 'templates/footer.php'; ?>
+<?php get_footer() ?>
