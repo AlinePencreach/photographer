@@ -47,6 +47,22 @@ a {
   color: #D3E4EC; 
 }
 
+footer {
+  background-color: #D3E4EC;
+  font-family: 'Arapey', serif;
+  font-size: 20px;
+}
+
+footer h2{
+  text-decoration: underline;
+  color: #CCA9A0;
+}
+
+footer a{
+  text-decoration: none;
+  color: #404A53;
+}
+
 /* Nouvelles règles si la fenêtre fait au plus 1024px de large */
 @media screen and (min-width: 992px){
   .position-lg-absolute{
