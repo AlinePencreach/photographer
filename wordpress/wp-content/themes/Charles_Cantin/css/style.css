@@ -21,6 +21,16 @@ a {
 }
 
 
+.menu-item{
+  text-align: center;
+}
+
+#menu-menu-principal{
+  display: none;
+}
+
+
+
 .navbar-brand {
   color: #D3E4EC; 
   font-family: 'Poiret One', cursive;
@@ -35,11 +45,9 @@ a {
 }
 
 
-
 .navbar-brand:hover{
   color: #D3E4EC; 
   text-decoration: none;
-
 }
 
 .nav-link {
@@ -50,7 +58,7 @@ a {
 .nav-link:hover{
   text-decoration: underline;
   color: #D3E4EC; 
-}
+} 
 
 
 .facebook {
@@ -68,7 +76,14 @@ footer {
   background-color: #D3E4EC;
   font-family: 'Arapey', serif;
   font-size: 20px;
-  color: #404A53
+  color: #404A53;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+footer li {
+  list-style-type: none;
+  text-decoration: none;
 }
 
 footer h2{
@@ -79,6 +94,7 @@ footer h2{
 footer a{
   text-decoration: none;
   color: #404A53;
+  list-style-type: none;
 }
 
 /* Nouvelles règles si la fenêtre fait au plus 992px de large soit lg xl xxl */
@@ -122,8 +138,8 @@ footer a{
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
-    height:  350px;
-  width: 350px;
+    height:  400px;
+  width: 400px;
   }
 }
 
