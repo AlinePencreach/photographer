@@ -51,3 +51,29 @@ wp_nav_menu( array(
     'walker'          => new WP_Bootstrap_Navwalker(),
 ) );
 
+function charles_cantin_register_post_types() {
+	
+    // CPT prestations
+    $labels = array(
+        'name' => 'Prestations',
+        'all_items' => 'Toutes les prestations',  // affiché dans le sous menu
+        'singular_name' => 'Prestation',
+        'add_new_item' => 'Ajouter une prestation',
+        'edit_item' => 'Modifier la prestation',
+        'menu_name' => 'Prestations'
+    );
+
+	$args = array(
+        'labels' => $labels,
+        'public' => true,
+        'show_in_rest' => true,
+        'has_archive' => true,
+        'supports' => array( 'title', 'editor', 'custom-fields'),
+        'menu_position' => 5, 
+        'menu_icon' => 'dashicons-products',
+	);
+
+	register_post_type( 'Prestations', $args );
+}
+add_action( 'init', 'charles_cantin_register_post_types' ); // Le hook init lance la fonction
+
