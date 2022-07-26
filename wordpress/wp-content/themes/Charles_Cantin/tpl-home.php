@@ -63,8 +63,8 @@
                     'container_class' => 'collapse navbar-collapse text-end me-xl-5 position-lg-absolute',
                     'container_id'    => 'navbarSupportedContent',
                     'menu_class'      => 'navbar-nav',
-                    'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
-                    'walker'          => new WP_Bootstrap_Navwalker(),
+                    // 'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
+                    // 'walker'          => new WP_Bootstrap_Navwalker(),
                 ) );
                 ?>
             </div>
@@ -95,7 +95,7 @@
         </svg>
       </h1>
 
-      <div class="w-lg-50 mt-4 mb-5"> <?php the_content() ?> </div>
+      <div class="w-lg-50 mt-4 mb-5 a-propos"> <?php the_content() ?> </div>
 
     </div>
 

@@ -14,33 +14,33 @@ function charles_cantin_register_assets()
         get_template_directory_uri() . '/css/style.css'
     );
 }
-
 add_action('wp_enqueue_scripts', 'charles_cantin_register_assets');
-
-
 
 /**
  * Register Custom Navigation Walker
  */
-function register_navwalker(){
-	require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
+function register_navwalker()
+{
+    require_once get_template_directory().'/class-wp-bootstrap-navwalker.php';
 }
-add_action( 'after_setup_theme', 'register_navwalker' );
+add_action('after_setup_theme', 'register_navwalker');
 
-if ( ! file_exists( get_template_directory() . '/class-wp-bootstrap-navwalker.php' ) ) {
+if (!file_exists(get_template_directory().'/class-wp-bootstrap-navwalker.php')) {
     // File does not exist... return an error.
-    return new WP_Error( 'class-wp-bootstrap-navwalker-missing', __( 'It appears the class-wp-bootstrap-navwalker.php file may be missing.', 'wp-bootstrap-navwalker' ) );
+    return new WP_Error('class-wp-bootstrap-navwalker-missing', __('It appears the class-wp-bootstrap-navwalker.php file may be missing.', 'wp-bootstrap-navwalker'));
 } else {
     // File exists... require it.
-    require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
+    require_once get_template_directory().'/class-wp-bootstrap-navwalker.php';
 }
 
-register_nav_menus( array(
-	'main' => 'Menu Principal',
-	'footer' => 'Bas de page',
-) );
+register_nav_menus(array(
+    'main' => 'Menu Principal',
+    'footer' => 'Bas de page',
+    'thème' => 'Menu secondaire',
+));
 
-wp_nav_menu( array(
+wp_nav_menu(
+    array(
     'theme_location'  => 'main',
     'depth'           => 2, // 1 = no dropdowns, 2 = with dropdowns.
     'container'       => 'div',
@@ -49,13 +49,13 @@ wp_nav_menu( array(
     'menu_class'      => 'navbar-nav',
     'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
     'walker'          => new WP_Bootstrap_Navwalker(),
-) );
+));
 
-function charles_cantin_register_post_types() {
-	
+function charles_cantin_register_post_types()
+{
     // CPT prestations
-    $labels = array(
-        'name' => 'Prestations',
+    $labels_prestation = array(
+        'name' => 'prestations',
         'all_items' => 'Toutes les prestations',  // affiché dans le sous menu
         'singular_name' => 'Prestation',
         'add_new_item' => 'Ajouter une prestation',
@@ -63,17 +63,61 @@ function charles_cantin_register_post_types() {
         'menu_name' => 'Prestations'
     );
 
-	$args = array(
-        'labels' => $labels,
+
+    $labels_galerie = array(
+        'name' => 'galeries',
+        'all_items' => 'Toutes les Galeries',  // affiché dans le sous menu
+        'singular_name' => 'Galerie',
+        'add_new_item' => 'Ajouter une galerie',
+        'edit_item' => 'Modifier la galerie',
+        'menu_name' => 'Galeries'
+    );
+
+    $args_prestation = array(
+        'labels' => $labels_prestation,
         'public' => true,
         'show_in_rest' => true,
         'has_archive' => true,
-        'supports' => array( 'title', 'editor', 'custom-fields'),
-        'menu_position' => 5, 
-        'menu_icon' => 'dashicons-products',
-	);
+        'menu_icon' => 'dashicons-money-alt',
+    );
 
-	register_post_type( 'Prestations', $args );
+    $args_galerie = array(
+        'labels' => $labels_galerie,
+        'public' => true,
+        'show_in_rest' => true,
+        'has_archive' => true,
+        'menu_icon' => 'dashicons-format-image',
+    );
+
+    register_post_type('prestations', $args_prestation);
+    register_post_type('galeries', $args_galerie);
 }
-add_action( 'init', 'charles_cantin_register_post_types' ); // Le hook init lance la fonction
 
+add_action('init', 'charles_cantin_register_post_types'); // Le hook init lance la fonction
+
+//filtrer les galeries photos par thème : grosses, bebe, a deux, paysages etc
+function create_taxonomy_theme()
+{
+
+    register_taxonomy(
+        'tax_theme',
+        'galeries',
+        array(
+            'labels' => array(
+                'name' => 'Thèmes',
+                'singular_name' => 'Thème',
+
+            ),
+            'description' => 'Nom du theme',
+            'public' => false,
+            'show_ui' => true,
+            'hierarchical' => true,
+        )
+    );
+}
+
+add_action('init', 'create_taxonomy_theme');
+
+
+
+?>

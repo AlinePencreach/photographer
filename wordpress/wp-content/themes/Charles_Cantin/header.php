@@ -47,8 +47,8 @@
                     'container_class' => 'collapse navbar-collapse text-end me-xl-5 position-lg-absolute',
                     'container_id'    => 'navbarSupportedContent',
                     'menu_class'      => 'navbar-nav',
-                    'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
-                    'walker'          => new WP_Bootstrap_Navwalker(),
+                    // 'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
+                    // 'walker'          => new WP_Bootstrap_Navwalker(),
                 ) );
                 ?>
             </div>
