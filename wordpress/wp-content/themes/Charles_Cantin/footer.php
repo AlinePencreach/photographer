@@ -8,7 +8,7 @@
             </svg>
         </div>
 
-        <div class="container-fuid container-fuid d-flex flex-column align-items-center ">
+        <div class="container d-flex flex-column align-items-center contact">
             <h2 class="text-decoration-underline">Coordonées</h2>
             <div class="d-flex">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-envelope m-2" viewBox="0 0 16 16">
