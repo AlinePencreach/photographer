@@ -57,6 +57,15 @@ a:hover{
 
 }
 
+
+
+
+
+
+
+
+
+
 .navbar-nav{
   color: #D3E4EC; 
   font-family: 'Arapey', serif;
@@ -65,12 +74,13 @@ a:hover{
 }
 
 
+
 .navbar-nav a{
   color: #D3E4EC; 
   font-family: 'Arapey', serif;
   font-size: 25px;
   text-decoration: none;
-  margin: .5em;
+  margin: .5em;  
 }
 
 .navbar-nav a::after{
@@ -139,6 +149,7 @@ a:hover{
 .taxo-menu-dropdown a:hover::after{
   width: 100%;
 }
+
 
 
 .navbar-brand:hover{
@@ -211,7 +222,9 @@ footer a{
     left: 3%;
   }
 
-
+  svg {
+    width: 15em;
+  }
 }
 
 @media screen and (min-width: 992px) 
@@ -237,9 +250,7 @@ footer a{
   width: 250px;
 }
 
-svg {
-  font-size: 20em;
-}
+
 
 }
 
@@ -251,10 +262,6 @@ svg {
     transform: translate(-50%, -50%);
     height:  400px;
   width: 400px;
-  }
-
-  svg {
-    font-size: 50em;
   }
 
 }

@@ -46,9 +46,7 @@ wp_nav_menu(
     'container'       => 'div',
     'container_class' => 'collapse navbar-collapse text-end me-xl-5 position-lg-absolute',
     'container_id'    => 'navbarSupportedContent',
-    'menu_class'      => 'navbar-nav',
-    'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
-    'walker'          => new WP_Bootstrap_Navwalker(),
+    'menu_class'      => 'navbar-nav'
 ));
 
 function charles_cantin_register_post_types()
