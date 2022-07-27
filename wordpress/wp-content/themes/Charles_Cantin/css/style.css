@@ -236,6 +236,11 @@ footer a{
   height:  250px;
   width: 250px;
 }
+
+svg {
+  font-size: 20em;
+}
+
 }
 
 @media screen and (min-width: 1392px){
@@ -247,6 +252,11 @@ footer a{
     height:  400px;
   width: 400px;
   }
+
+  svg {
+    font-size: 50em;
+  }
+
 }
 
 
