@@ -115,7 +115,4 @@ function create_taxonomy_theme()
 }
 
 add_action('init', 'create_taxonomy_theme');
-
-
-
 ?>
